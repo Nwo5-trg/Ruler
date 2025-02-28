@@ -1,0 +1,210 @@
+{
+	"geode": "4.2.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074"
+	},
+	"id": "nwo5.ruler",
+	"name": "Ruler",
+	"version": "v1.0.0",
+	"developer": "Nwo5",
+	"description": "A quick measuring tool.",
+	"tags": ["utility", "editor", "offline"],
+	"resources": {
+		"sprites": [
+			"resources/*.png"
+		],
+		"spritesheets": {
+            "Sheet": ["resources/Sheet/*.png"]
+		}
+	},
+	"settings": {
+		"general-title": {
+			"type": "title",
+			"name": "General"
+		},
+		"deselect-enabled": {
+			"type": "bool",
+			"name": "Deselect On Measure",
+			"default": true
+		},
+		"delete-enabled": {
+			"type": "bool",
+			"name": "Delete On Measure",
+			"default": false
+		},
+		"measure-type": {
+			"type": "string",
+			"name": "Measure Type",
+			"description": "Full means the entire selected area, including both objects. A-B means selected area minus an object (so the area you would have to move object a to get to object b). Inbetween means area without any of the corner objs.",
+			"default": "Full",
+			"one-of": ["Full", "A-B", "Inbetween"]
+		},
+		"measure-display-type": {
+			"type": "string",
+			"name": "Measure Type",
+			"description": "Decimal means distance will be displayed as a decimal (1 = 30 gd units), GD Units means decimals will be replaced with the GD Unit count.",
+			"default": "GD Units",
+			"one-of": ["Decimal", "GD Units"]
+		},
+		"gd-unit-seperator": {
+			"type": "string",
+			"name": "GD Unit Seperator",
+			"default": ", ",
+			"filter": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}|[]:';,./?><`~ "
+		},
+		"label-rounding": {
+			"type": "int",
+			"name": "Label Rounding",
+			"default": 2,
+			"min": 0,
+			"max": 5
+		},
+		"label-buffer": {
+			"type": "float",
+			"name": "Label Buffer",
+			"description": "Added to labels position.",
+			"default": 5,
+			"min": -50,
+			"max": 50
+		},
+		"label-scale": {
+			"type": "float",
+    		"name": "Label Scale",
+			"default": 1,
+			"min": 0.1,
+            "max": 5
+		},
+		"label-font": {
+			"type": "int",
+    		"name": "Label Font",
+			"description": "0, is default, 1-59 are all the editor fonts, 60 is helvetica lol, 61 is 'goldFont'",
+			"default": 60,
+			"min": 0,
+            "max": 61
+		},
+		"toggles-title": {
+			"type": "title",
+			"name": "Toggles"
+		},
+		"outline-enabled": {
+			"type": "bool",
+			"name": "Enable Outline",
+			"default": true
+		},
+		"fill-enabled": {
+			"type": "bool",
+			"name": "Enable Fill",
+			"default": true
+		},
+		"corners-enabled": {
+			"type": "bool",
+			"name": "Enable Corners",
+			"default": true
+		},
+		"label-enabled": {
+			"type": "bool",
+			"name": "Enable Label",
+			"default": true
+		},
+		"colors-title": {
+			"type": "title",
+			"name": "Colors"
+		},
+		"gradient-enabled": {
+			"type": "bool",
+			"name": "Enable Outline Gradient",
+			"default": false
+		},
+		"gradient-direction": {
+			"type": "int",
+			"name": "Gradient Direction",
+			"description": "1 for left, 2 for up, 3 for right, 4 for down",
+			"default": 1,
+			"min": 1,
+			"max": 4,
+			"enable-if": "gradient-enabled"
+		},
+		"random-color": {
+			"type": "bool",
+			"name": "Random Color",
+			"description": "Selects one of a couple colors to set the measurement to randomly (overrides gradient).",
+			"default": true
+		},
+		"fill-override-random-color": {
+			"type": "bool",
+			"name": "Fill Override Random Color",
+			"default": false
+		},
+		"corner-override-random-color": {
+			"type": "bool",
+			"name": "Corner Override Random Color",
+			"default": false
+		},
+		"outline-override-random-color": {
+			"type": "bool",
+			"name": "Outline Override Random Color",
+			"default": false
+		},
+		"label-override-random-color": {
+			"type": "bool",
+			"name": "Label Override Random Color",
+			"default": false
+		},
+		"outline-color-one": {
+			"type": "rgb",
+			"name": "Outline Color 1",
+			"default": "#ff0000"
+		},
+		"outline-color-two": {
+			"type": "rgb",
+			"name": "Outline Color 2",
+			"default": "#ffff00",
+			"enable-if": "gradient-enabled"
+		},
+		"corner-color": {
+			"type": "rgb",
+			"name": "Corner Color",
+			"default": "#ffffff"
+		},
+		"fill-color": {
+			"type": "rgb",
+			"name": "Fill Color",
+			"default": "#ffffff"
+		},
+		"label-color": {
+			"type": "rgb",
+			"name": "Fill Color",
+			"default": "#ffffff"
+		},
+		"fill-opacity": {
+			"type": "int",
+			"name": "Fill Opacity",
+			"default": 50,
+			"min": 0,
+			"max": 255
+		},
+		"corner-opacity": {
+			"type": "int",
+			"name": "Corner Opacity",
+			"default": 255,
+			"min": 0,
+			"max": 255
+		},
+		"outline-opacity": {
+			"type": "int",
+			"name": "Outline Opacity",
+			"default": 255,
+			"min": 0,
+			"max": 255
+		},
+		"label-opacity": {
+			"type": "int",
+			"name": "Label Opacity",
+			"default": 255,
+			"min": 0,
+			"max": 255
+		}
+	}
+}
