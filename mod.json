@@ -11,6 +11,9 @@
 	"developer": "Nwo5",
 	"description": "A quick measuring tool.",
 	"tags": ["utility", "editor", "offline"],
+	"links": {
+		"source": "https://github.com/Nwo5-trg/Ruler"
+	},
 	"resources": {
 		"sprites": [
 			"resources/*.png"
